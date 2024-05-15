@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int main () {
+int main () {\
   //input
   int N; // 1 <= N <= 100
   cin >> N; 
@@ -14,9 +14,10 @@ int main () {
   //sorting and output
   for(int i=1; i<N; i++) {
       //output
-    for(int index=0; index<N-1; index++){
-      cout << A[index] << " ";
-      if(index==N){
+    for(int index=0; index<N; index++){
+      if(index < N-1){
+        cout << A[index] << " ";
+      } else {
         cout << A[index] << endl;
       }
     }
@@ -29,9 +30,12 @@ int main () {
     A[j+1] = pivot;
   }
   for(int index=0; index<N; index++){
-      cout << A[index] << " ";
-      if(index==N){
+      if(index < N-1){
+        cout << A[index] << " ";
+      } else {
         cout << A[index] << endl;
       }
   }
+
+  return 0;
 }
