@@ -5,7 +5,7 @@ using namespace std;
 
 int main () {
   //input
-  unsigned int N; // 1 <= N <= 100
+  int N; // 1 <= N <= 100
   cin >> N; 
   vector<int> A(N);
   for(int i=0; i<N; i++) {
@@ -14,12 +14,14 @@ int main () {
   //sorting and output
   for(int i=1; i<N; i++) {
       //output
-    for(int index=0; index<N; index++){
-      cout << A[index];
+    for(int index=0; index<N-1; index++){
+      cout << A[index] << " ";
+      if(index==N){
+        cout << A[index] << endl;
+      }
     }
-    cout << endl;
-    unsigned int pivot;
-    unsigned int j=i-1;
+    int pivot = A[i];
+    int j=i-1;
     while(A[j] > pivot && j >= 0){
       A[j+1] = A[j];
       j--;
@@ -27,7 +29,9 @@ int main () {
     A[j+1] = pivot;
   }
   for(int index=0; index<N; index++){
-      cout << A[index];
+      cout << A[index] << " ";
+      if(index==N){
+        cout << A[index] << endl;
+      }
   }
-  cout << endl;
 }
